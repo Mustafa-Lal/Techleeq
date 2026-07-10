@@ -1,0 +1,15 @@
+/* ============================================================================
+   TECHLEEQ FONT IMPORTS
+   ============================================================================ */
+
+/* Syne - Display Font (Bold, Extra Bold for Headlines, Hero titles) */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap');
+
+/* DM Sans - Heading Font (Medium, SemiBold for Section titles, card headers) */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap');
+
+/* Geist - Body & UI Font */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap');
+
+/* JetBrains Mono - Monospace (for version numbers, code snippets, referral codes) */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
