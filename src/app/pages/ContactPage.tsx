@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, MessageSquare, Headphones, Users, CheckCircle2, Send } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useSEO } from '../hooks/useSEO';
 
 const contactReasons = [
   'General inquiry',
@@ -19,6 +20,13 @@ const offices = [
 ];
 
 export function ContactPage() {
+  useSEO({
+    title: 'Contact Techleeq – Get In Touch With Our Team',
+    description:
+      'Have a question, need a demo, or want to start a project? Reach the Techleeq team in Lagos, Nairobi, or Accra. We respond within one business day.',
+    path: '/contact',
+  });
+
   const [form, setForm] = useState({ name: '', email: '', company: '', reason: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);

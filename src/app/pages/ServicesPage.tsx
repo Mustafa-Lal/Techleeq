@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { BookOpen, CheckCircle2 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { extractTextFromRichText } from '../utils';
+import { useSEO } from '../hooks/useSEO';
 
 const processSteps = [
   { step: '01', title: 'Discovery call', desc: 'We map your current workflows, pain points, and goals in a 60-minute session.' },
@@ -12,8 +13,16 @@ const processSteps = [
 ];
 
 export function ServicesPage() {
+  useSEO({
+    title: 'Professional Services – Implementation & Support | Techleeq',
+    description:
+      "From discovery call to long-term success — Techleeq's services team ensures fast adoption, smooth operations, and measurable ROI for your business.",
+    path: '/services',
+  });
+
   const [services, setServices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL || ''}/api/services?populate=*`)
@@ -78,7 +87,7 @@ export function ServicesPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map(({ imageUrl, title, color, desc, features }) => (
+              {services.map(({ id, imageUrl, title, color, desc, features }) => (
                 <div key={title} className="group rounded-[var(--radius-xl)] bg-[var(--color-bg-surface)] border border-[var(--color-bg-border)] hover:border-[rgba(10,132,255,0.3)] transition-all flex flex-col overflow-hidden">
                   {/* Image – full-width, clips cleanly via parent overflow-hidden */}
                   {imageUrl && (
@@ -97,7 +106,21 @@ export function ServicesPage() {
                   {/* Content */}
                   <div className="p-6 md:p-8 flex flex-col flex-1">
                     <h3 className="text-[18px] font-semibold text-[var(--color-text-primary)] mb-3">{title}</h3>
-                    <p className="text-[14px] text-[var(--color-text-secondary)] leading-relaxed mb-5">{desc}</p>
+                    <p className="text-[14px] text-[var(--color-text-secondary)] leading-relaxed mb-5">
+                      {desc.length > 100 ? (
+                        <>
+                          {desc.substring(0, 100)}...{' '}
+                          <Link
+                            to={`/services/${id}`}
+                            className="text-[var(--color-primary)] hover:underline font-medium ml-1"
+                          >
+                            Read more
+                          </Link>
+                        </>
+                      ) : (
+                        desc
+                      )}
+                    </p>
                     <ul className="space-y-2 flex-1">
                       {features?.map((f: any) => (
                         <li key={f} className="flex items-start gap-2.5">
@@ -145,6 +168,7 @@ export function ServicesPage() {
           </Link>
         </div>
       </section>
+
     </div>
   );
 }

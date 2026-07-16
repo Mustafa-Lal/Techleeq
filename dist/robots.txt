@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /apply
+Sitemap: https://techleeq.com/sitemap.xml

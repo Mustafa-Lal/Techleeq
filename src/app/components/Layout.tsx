@@ -19,6 +19,13 @@ export function Layout() {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    // Disable browser native scroll restoration so refresh always starts at top
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
 

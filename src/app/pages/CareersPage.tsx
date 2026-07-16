@@ -3,7 +3,15 @@ import { Link } from 'react-router';
 import { MapPin, Clock, Briefcase, ChevronDown, ChevronUp, ArrowRight, Users } from 'lucide-react';
 import { Button } from '../components/Button';
 import { RichTextRenderer } from '../components/RichTextRenderer';
+import { useSEO } from '../hooks/useSEO';
 export function CareersPage() {
+  useSEO({
+    title: 'Careers at Techleeq – Join Our Team Across Africa',
+    description:
+      'Join 80+ people across 12 countries building the future of African enterprise software. View open roles at Techleeq and make your impact.',
+    path: '/careers',
+  });
+
   const [jobs, setJobs] = useState<any[]>([]);
   const [activeDept, setActiveDept] = useState('All');
   const [expandedJob, setExpandedJob] = useState<number | null>(null);
@@ -103,7 +111,7 @@ export function CareersPage() {
                   <p className="text-[var(--color-text-muted)]">No open roles in this department right now.</p>
                   <p className="text-[13px] text-[var(--color-text-muted)] mt-2">Send us your CV and we'll keep it on file.</p>
                   <div className="mt-4">
-                    <Link to="/apply?job=Speculative"><Button variant="secondary" size="md">Send Speculative Application</Button></Link>
+                    <Button variant="secondary" size="md" onClick={() => alert('Application currently closed')}>Send Speculative Application</Button>
                   </div>
                 </div>
               ) : (
@@ -137,9 +145,7 @@ export function CareersPage() {
                         <div className="text-[14px] text-[var(--color-text-secondary)] leading-relaxed mb-4">
                           <RichTextRenderer content={job.desc} />
                         </div>
-                        <Link to={`/apply?job=${encodeURIComponent(job.title)}`}>
-                          <Button variant="primary" size="sm">Apply Now <ArrowRight size={14} /></Button>
-                        </Link>
+                        <Button variant="primary" size="sm" onClick={() => alert('Application currently closed')}>Apply Now <ArrowRight size={14} /></Button>
                       </div>
                     )}
                   </div>
@@ -151,7 +157,7 @@ export function CareersPage() {
           <div className="mt-12 p-8 rounded-[var(--radius-xl)] border border-[var(--color-bg-border)] bg-[var(--color-bg-surface)] text-center">
             <p className="text-[15px] text-[var(--color-text-secondary)] mb-2">Don't see the right role?</p>
             <p className="text-[13px] text-[var(--color-text-muted)] mb-5">We hire for attitude and aptitude. Send us your story.</p>
-            <Link to="/apply?job=Speculative"><Button variant="secondary" size="md">Send Speculative Application</Button></Link>
+            <Button variant="secondary" size="md" onClick={() => alert('Application currently closed')}>Send Speculative Application</Button>
           </div>
         </div>
       </section>

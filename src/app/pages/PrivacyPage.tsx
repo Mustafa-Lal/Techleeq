@@ -1,4 +1,5 @@
 import { Shield } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const sections = [
   {
@@ -74,6 +75,13 @@ For EU residents: Our EU Representative is available at eu-privacy@techleeq.com`
 ];
 
 export function PrivacyPage() {
+  useSEO({
+    title: 'Privacy Policy | Techleeq',
+    description:
+      'Read Techleeq’s privacy policy to understand how we collect, use, and protect your personal data across our business management platform.',
+    path: '/privacy',
+  });
+
   return (
     <div className="min-h-screen">
       <section className="relative py-[80px] px-[20px] md:px-[40px] text-center overflow-hidden">

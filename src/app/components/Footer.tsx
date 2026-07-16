@@ -13,7 +13,6 @@ const productLinks = [
 const supportLinks = [
   { label: 'Help Center', to: '#' },
   { label: 'Contact Us', to: '/contact' },
-  { label: 'Privacy Policy', to: '/privacy' },
 ];
 
 function FooterAccordion({ title, links }: { title: string; links: typeof companyLinks }) {
@@ -248,9 +247,6 @@ export function Footer() {
         <div className="pt-8 border-t border-[var(--color-bg-border)] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[13px] text-[var(--color-text-muted)] text-center md:text-left">© 2026 Techleeq. All rights reserved.</p>
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-            <Link to="/privacy" className="text-[13px] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-[13px] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Terms of Service</Link>
-            <Link to="/cookies" className="text-[13px] text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

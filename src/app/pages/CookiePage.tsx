@@ -1,4 +1,5 @@
 import { Cookie } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const cookieTypes = [
   {
@@ -28,6 +29,13 @@ const cookieTypes = [
 ];
 
 export function CookiePage() {
+  useSEO({
+    title: 'Cookie Policy | Techleeq',
+    description:
+      'Learn how Techleeq uses cookies to improve your experience on our website.',
+    path: '/cookies',
+  });
+
   return (
     <div className="min-h-screen">
       <section className="relative py-[80px] px-[20px] md:px-[40px] text-center overflow-hidden">

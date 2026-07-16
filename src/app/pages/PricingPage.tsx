@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { Check, X, ChevronDown, ChevronUp, Shield, Zap, Building2, Star } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useSEO } from '../hooks/useSEO';
 
 const plans = [
   {
@@ -138,6 +139,13 @@ const faqs = [
 ];
 
 export function PricingPage() {
+  useSEO({
+    title: 'Pricing – Flexible Plans for Every Business Size | Techleeq',
+    description:
+      'Start free, scale as you grow. Explore Techleeq’s transparent pricing plans — from free trial to enterprise — with no hidden fees and offline access included.',
+    path: '/pricing',
+  });
+
   const [annual, setAnnual] = useState(true);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 

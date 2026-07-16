@@ -3,8 +3,16 @@ import { Link } from 'react-router';
 import { Package } from 'lucide-react';
 import { Button } from '../components/Button';
 import { extractTextFromRichText } from '../utils';
+import { useSEO } from '../hooks/useSEO';
 
 export function ProductsPage() {
+  useSEO({
+    title: 'Products – Integrated Business Management Platform | Techleeq',
+    description:
+      'One platform, every business function. Explore Techleeq’s fully integrated modules that replace a stack of disconnected tools — data flows seamlessly between them.',
+    path: '/products',
+  });
+
   const [modules, setModules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -70,16 +78,12 @@ export function ProductsPage() {
                   <h3 className="text-[18px] font-bold text-[var(--color-text-primary)] mb-3">{name}</h3>
                   <p className="text-[14px] text-[var(--color-text-secondary)] leading-relaxed flex-1 mb-8">{tagline}</p>
                   <div className="grid grid-cols-2 gap-4 mt-auto">
-                    <Link to="/download">
-                      <Button variant="primary" size="md" className="w-full">
-                        Buy
-                      </Button>
-                    </Link>
-                    <Link to={`/products/${id}`}>
-                      <Button variant="secondary" size="md" className="w-full">
-                        Detail
-                      </Button>
-                    </Link>
+                    <Button variant="primary" size="md" className="w-full" onClick={() => alert('Coming soon')}>
+                      Buy
+                    </Button>
+                    <Button variant="secondary" size="md" className="w-full" onClick={() => alert('Coming soon')}>
+                      Detail
+                    </Button>
                   </div>
                 </div>
               ))}

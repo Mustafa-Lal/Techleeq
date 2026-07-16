@@ -1,4 +1,5 @@
 import { FileText } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
 
 const sections = [
   {
@@ -57,6 +58,13 @@ For cloud sync users: you grant TechLeeq a limited license to store and process 
 ];
 
 export function TermsPage() {
+  useSEO({
+    title: 'Terms of Service | Techleeq',
+    description:
+      'Review Techleeq’s terms of service governing the use of our software platform and services.',
+    path: '/terms',
+  });
+
   return (
     <div className="min-h-screen">
       <section className="relative py-[80px] px-[20px] md:px-[40px] text-center overflow-hidden">
