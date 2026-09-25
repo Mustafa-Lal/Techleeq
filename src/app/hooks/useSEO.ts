@@ -60,6 +60,9 @@ export function useSEO({ title, description, path = '/', image }: SEOProps) {
     // <meta name="description">
     setMeta('meta[name="description"]', 'content', description);
 
+    // Keep every public route eligible for indexing, even after client-side navigation.
+    setMeta('meta[name="robots"]', 'content', 'index, follow');
+
     // <link rel="canonical">
     setMeta('link[rel="canonical"]', 'href', canonicalUrl);
 

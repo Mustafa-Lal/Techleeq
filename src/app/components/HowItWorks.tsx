@@ -1,29 +1,29 @@
-import { Download, UserPlus, CreditCard, Tag } from 'lucide-react';
+import { MessageSquare, ClipboardList, Rocket, Handshake } from 'lucide-react';
 
 const steps = [
   {
     number: '01',
-    icon: Download,
-    title: 'Download the Software',
-    description: 'Visit our site, pick your plan, download the .exe installer (Windows or Mac)',
+    icon: MessageSquare,
+    title: 'Tell Us Your Goals',
+    description: 'Start with a quick conversation about your business, challenges, and priorities.',
   },
   {
     number: '02',
-    icon: UserPlus,
-    title: 'Create Your Account',
-    description: 'Register, log in, and set up your company profile in minutes',
+    icon: ClipboardList,
+    title: 'Shape the Solution',
+    description: 'We turn your requirements into a clear, practical plan for your team.',
   },
   {
     number: '03',
-    icon: CreditCard,
-    title: 'Choose a Plan',
-    description: 'Select Free Trial or a paid Subscription that fits your team size',
+    icon: Rocket,
+    title: 'Launch with Confidence',
+    description: 'Our specialists implement your solution and help your team get started smoothly.',
   },
   {
     number: '04',
-    icon: Tag,
-    title: 'Activate with Referral (Optional)',
-    description: "Enter your salesperson's referral code or skip",
+    icon: Handshake,
+    title: 'Grow with Ongoing Support',
+    description: 'Stay supported as your business evolves, with guidance whenever you need it.',
   },
 ];
 
@@ -37,10 +37,10 @@ export function HowItWorks() {
             HOW IT WORKS
           </p>
           <h2 className="font-['Syne'] text-[40px] md:text-[40px] font-bold leading-tight text-[var(--color-text-primary)] mb-4">
-            Get started in minutes
+            A straightforward path to better operations
           </h2>
           <p className="text-[17px] text-[var(--color-text-secondary)] leading-relaxed">
-            Four simple steps from download to deployment.
+            From your first conversation to long-term growth, we are with you at every step.
           </p>
         </div>
 

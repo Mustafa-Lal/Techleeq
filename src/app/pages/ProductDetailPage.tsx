@@ -4,11 +4,18 @@ import { ArrowLeft, CheckCircle2, Package } from 'lucide-react';
 import { Button } from '../components/Button';
 import { NotFoundPage } from './NotFoundPage';
 import { RichTextRenderer } from '../components/RichTextRenderer';
+import { useSEO } from '../hooks/useSEO';
 
 export function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title: product ? `${product.name} | Techleeq Products` : 'Product Details | Techleeq',
+    description: product?.tagline || 'Explore Techleeq products and solutions for modern businesses.',
+    path: `/products/${id}`,
+  });
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL || ''}/api/products?populate=*`)
@@ -100,9 +107,9 @@ export function ProductDetailPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-8 border-t border-[var(--color-bg-border)] relative z-10">
-            <Link to="/download" className="w-full sm:w-auto">
+            <Link to="/contact" className="w-full sm:w-auto">
               <Button variant="primary" size="lg" className="w-full">
-                Buy Module
+                Talk to Sales
               </Button>
             </Link>
             <Link to="/contact" className="w-full sm:w-auto">

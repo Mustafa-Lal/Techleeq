@@ -1,0 +1,11 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Wrangler (Cloudflare) local state/cache
+.wrangler/
+
+
+# Node.js dependencies
+node_modules/

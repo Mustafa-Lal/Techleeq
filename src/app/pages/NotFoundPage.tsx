@@ -4,7 +4,7 @@ import { Button } from '../components/Button';
 
 const quickLinks = [
   { label: 'Homepage', to: '/' },
-  { label: 'Download', to: '/download' },
+  { label: 'Products', to: '/products' },
   { label: 'About Us', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ];

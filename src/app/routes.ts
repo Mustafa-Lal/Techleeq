@@ -8,7 +8,6 @@ import { ProductsPage } from './pages/ProductsPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CareersPage } from './pages/CareersPage';
 import { ContactPage } from './pages/ContactPage';
-import { DownloadPage } from './pages/DownloadPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 import { CookiePage } from './pages/CookiePage';
@@ -28,7 +27,6 @@ export const router = createBrowserRouter([
       { path: 'products/:id', Component: ProductDetailPage },
       { path: 'careers', Component: CareersPage },
       { path: 'contact', Component: ContactPage },
-      { path: 'download', Component: DownloadPage },
       { path: 'privacy', Component: PrivacyPage },
       { path: 'terms', Component: TermsPage },
       { path: 'cookies', Component: CookiePage },

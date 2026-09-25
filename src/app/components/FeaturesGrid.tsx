@@ -77,9 +77,9 @@ export function FeaturesGrid() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2 md:gap-[clamp(8px,1vh,12px)] mt-auto pt-3 md:pt-[clamp(8px,1.5vh,16px)]">
-                  <Link to="/download" className="w-full">
+                  <Link to="/contact" className="w-full">
                     <Button variant="primary" size="sm" className="w-full">
-                      Buy
+                      Contact Sales
                     </Button>
                   </Link>
                   <Link to={`/products/${product.id}`} className="w-full">

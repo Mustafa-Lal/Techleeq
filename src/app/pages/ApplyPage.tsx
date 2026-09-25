@@ -2,10 +2,17 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { Briefcase, CheckCircle2, Send, Calendar, Globe, User, Phone, Mail, Award, AlignLeft, Linkedin } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useSEO } from '../hooks/useSEO';
 
 export function ApplyPage() {
   const [searchParams] = useSearchParams();
   const jobTitle = searchParams.get('job') || 'General Application';
+
+  useSEO({
+    title: 'Apply for a Role at Techleeq',
+    description: 'Apply to join the Techleeq team and help build practical digital solutions for businesses.',
+    path: '/apply',
+  });
 
   const [form, setForm] = useState({
     name: '',
