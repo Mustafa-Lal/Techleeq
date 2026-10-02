@@ -4,6 +4,7 @@ import { ArrowLeft, CheckCircle2, Package } from 'lucide-react';
 import { Button } from '../components/Button';
 import { NotFoundPage } from './NotFoundPage';
 import { RichTextRenderer } from '../components/RichTextRenderer';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 import { useSEO } from '../hooks/useSEO';
 
 export function ProductDetailPage() {
@@ -57,6 +58,14 @@ export function ProductDetailPage() {
   return (
     <div className="min-h-screen py-[80px] px-[20px] md:px-[40px]">
       <div className="max-w-[800px] mx-auto">
+        <Breadcrumbs
+          className="mb-6"
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Products', path: '/products' },
+            { name: product.name, path: `/products/${id}` },
+          ]}
+        />
         <Link to="/products" className="inline-flex items-center gap-2 text-[14px] font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] mb-8 transition-colors">
           <ArrowLeft size={16} />
           Back to Products

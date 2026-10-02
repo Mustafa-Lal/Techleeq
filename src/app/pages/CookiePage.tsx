@@ -1,5 +1,6 @@
 import { Cookie } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 
 const cookieTypes = [
   {
@@ -29,12 +30,7 @@ const cookieTypes = [
 ];
 
 export function CookiePage() {
-  useSEO({
-    title: 'Cookie Policy | Techleeq',
-    description:
-      'Learn how Techleeq uses cookies to improve your experience on our website.',
-    path: '/cookies',
-  });
+  useSEO(ROUTE_SEO['/cookies']);
 
   return (
     <div className="min-h-screen">

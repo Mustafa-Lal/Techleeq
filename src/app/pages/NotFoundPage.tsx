@@ -1,6 +1,7 @@
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { Home, ArrowLeft, Search } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useSEO } from '../hooks/useSEO';
 
 const quickLinks = [
   { label: 'Homepage', to: '/' },
@@ -10,6 +11,14 @@ const quickLinks = [
 ];
 
 export function NotFoundPage() {
+  const location = useLocation();
+  useSEO({
+    title: 'Page Not Found | Techleeq',
+    description: 'The page you’re looking for doesn’t exist or has been moved.',
+    path: location.pathname,
+    noindex: true,
+  });
+
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-[20px]">
       <div className="max-w-[560px] text-center">

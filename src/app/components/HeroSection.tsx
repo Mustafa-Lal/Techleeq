@@ -213,11 +213,15 @@ export function HeroSection() {
             flexShrink: 0,
           }}
         >
-          Where Creativity
+          {/* Brand + full headline for SEO/assistive tech; visually unchanged.
+              The gradient second line below is aria-hidden to avoid double reading. */}
+          <span className="sr-only">Techleeq — </span>
+          Where Creativity<span className="sr-only"> Meets Technology.</span>
         </motion.h1>
 
-        {/* Headline line 2 – gradient */}
+        {/* Headline line 2 – gradient (decorative; text lives in the h1 above) */}
         <motion.div
+          aria-hidden="true"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.14 }}

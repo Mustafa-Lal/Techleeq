@@ -4,6 +4,7 @@ import { BookOpen, CheckCircle2 } from 'lucide-react';
 import { Button } from '../components/Button';
 import { extractTextFromRichText } from '../utils';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 
 const processSteps = [
   { step: '01', title: 'Discovery call', desc: 'We map your current workflows, pain points, and goals in a 60-minute session.' },
@@ -13,12 +14,7 @@ const processSteps = [
 ];
 
 export function ServicesPage() {
-  useSEO({
-    title: 'Professional Services – Implementation & Support | Techleeq',
-    description:
-      "From discovery call to long-term success — Techleeq's services team ensures fast adoption, smooth operations, and measurable ROI for your business.",
-    path: '/services',
-  });
+  useSEO(ROUTE_SEO['/services']);
 
   const [services, setServices] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

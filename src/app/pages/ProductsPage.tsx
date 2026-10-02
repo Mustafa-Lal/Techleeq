@@ -4,14 +4,10 @@ import { Package } from 'lucide-react';
 import { Button } from '../components/Button';
 import { extractTextFromRichText } from '../utils';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 
 export function ProductsPage() {
-  useSEO({
-    title: 'Products – Integrated Business Management Platform | Techleeq',
-    description:
-      'One platform, every business function. Explore Techleeq’s fully integrated modules that replace a stack of disconnected tools — data flows seamlessly between them.',
-    path: '/products',
-  });
+  useSEO(ROUTE_SEO['/products']);
 
   const [modules, setModules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

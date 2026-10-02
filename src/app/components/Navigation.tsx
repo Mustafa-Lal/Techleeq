@@ -47,7 +47,7 @@ export function Navigation() {
           >
             <img src={logoUrl} alt="Techleeq Logo" style={{ height: '36px', width: 'auto', maxWidth: '80px', display: 'block', objectFit: 'contain' }} />
             <div className="flex items-center tracking-tight">
-              <span className="font-['Syne'] font-bold text-[20px] md:text-[24px] text-[var(--color-text-primary)]">Tech&nbsp;</span>
+              <span className="font-['Syne'] font-bold text-[20px] md:text-[24px] text-[var(--color-text-primary)]">Tech</span>
               <span className="font-['Syne'] font-bold text-[20px] md:text-[24px] text-[var(--color-primary)]">leeq</span>
             </div>
           </Link>

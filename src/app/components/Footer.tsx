@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Linkedin, Instagram, Facebook, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { Linkedin, Instagram, Github, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router';
 import { Button } from './Button';
+import { SOCIAL } from '../seo.config';
 
 const companyLinks = [
   { label: 'About Us', to: '/about' },
@@ -103,13 +104,14 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               {[
-                { Icon: Linkedin, url: import.meta.env.VITE_LINKEDIN_URL || '#' },
-                { Icon: Instagram, url: import.meta.env.VITE_INSTAGRAM_URL || '#' },
-                { Icon: Facebook, url: import.meta.env.VITE_FACEBOOK_URL || '#' }
-              ].map(({ Icon, url }, i) => (
+                { Icon: Linkedin, label: 'Techleeq on LinkedIn', url: import.meta.env.VITE_LINKEDIN_URL || SOCIAL.linkedin },
+                { Icon: Instagram, label: 'Techleeq on Instagram', url: import.meta.env.VITE_INSTAGRAM_URL || SOCIAL.instagram },
+                { Icon: Github, label: 'Techleeq on GitHub', url: import.meta.env.VITE_GITHUB_URL || SOCIAL.github }
+              ].map(({ Icon, label, url }, i) => (
                 <a
                   key={i}
                   href={url}
+                  aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-[36px] h-[36px] rounded-full bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:bg-[var(--color-primary)] hover:text-white transition-all duration-[var(--duration-base)] flex items-center justify-center"
@@ -197,13 +199,14 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-3">
               {[
-                { Icon: Linkedin, url: import.meta.env.VITE_LINKEDIN_URL || '#' },
-                { Icon: Instagram, url: import.meta.env.VITE_INSTAGRAM_URL || '#' },
-                { Icon: Facebook, url: import.meta.env.VITE_FACEBOOK_URL || '#' }
-              ].map(({ Icon, url }, i) => (
+                { Icon: Linkedin, label: 'Techleeq on LinkedIn', url: import.meta.env.VITE_LINKEDIN_URL || SOCIAL.linkedin },
+                { Icon: Instagram, label: 'Techleeq on Instagram', url: import.meta.env.VITE_INSTAGRAM_URL || SOCIAL.instagram },
+                { Icon: Github, label: 'Techleeq on GitHub', url: import.meta.env.VITE_GITHUB_URL || SOCIAL.github }
+              ].map(({ Icon, label, url }, i) => (
                 <a
                   key={i}
                   href={url}
+                  aria-label={label}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-[40px] h-[40px] rounded-full bg-[var(--color-bg-elevated)] text-[var(--color-text-secondary)] hover:bg-[var(--color-primary)] hover:text-white transition-all duration-[var(--duration-base)] flex items-center justify-center touch-target"

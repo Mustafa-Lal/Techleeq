@@ -1,5 +1,6 @@
 import { Shield } from 'lucide-react';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 
 const sections = [
   {
@@ -75,12 +76,7 @@ For EU residents: Our EU Representative is available at eu-privacy@techleeq.com`
 ];
 
 export function PrivacyPage() {
-  useSEO({
-    title: 'Privacy Policy | Techleeq',
-    description:
-      'Read Techleeq’s privacy policy to understand how we collect, use, and protect your personal data across our business management platform.',
-    path: '/privacy',
-  });
+  useSEO(ROUTE_SEO['/privacy']);
 
   return (
     <div className="min-h-screen">

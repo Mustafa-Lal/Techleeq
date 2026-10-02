@@ -5,6 +5,7 @@ import { Button } from '../components/Button';
 import { Link } from 'react-router';
 import { NotFoundPage } from './NotFoundPage';
 import { RichTextRenderer } from '../components/RichTextRenderer';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 import { extractTextFromRichText } from '../utils';
 import { useSEO } from '../hooks/useSEO';
 
@@ -65,6 +66,15 @@ export function ServiceDetailPage() {
   return (
     <div className="min-h-screen py-[80px] px-[20px] md:px-[40px]">
       <div className="max-w-[1100px] mx-auto">
+
+        <Breadcrumbs
+          className="mb-6"
+          items={[
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+            { name: service.title, path: `/services/${id}` },
+          ]}
+        />
 
         {/* Back button — uses history.back() to preserve scroll position */}
         <button

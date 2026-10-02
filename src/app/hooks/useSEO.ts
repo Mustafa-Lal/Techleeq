@@ -26,6 +26,8 @@ interface SEOProps {
   path?: string;
   /** Absolute or root-relative image URL for OG/Twitter */
   image?: string;
+  /** Set true for pages that should NOT be indexed (e.g. 404). */
+  noindex?: boolean;
 }
 
 function setMeta(selector: string, attr: string, value: string) {
@@ -47,7 +49,7 @@ function setMeta(selector: string, attr: string, value: string) {
   (el as any)[attr] = value;
 }
 
-export function useSEO({ title, description, path = '/', image }: SEOProps) {
+export function useSEO({ title, description, path = '/', image, noindex = false }: SEOProps) {
   useEffect(() => {
     const canonicalUrl = `${BASE_URL}${path === '/' ? '/' : path.startsWith('/') ? path : '/' + path}`;
     const ogImage = image
@@ -60,8 +62,9 @@ export function useSEO({ title, description, path = '/', image }: SEOProps) {
     // <meta name="description">
     setMeta('meta[name="description"]', 'content', description);
 
-    // Keep every public route eligible for indexing, even after client-side navigation.
-    setMeta('meta[name="robots"]', 'content', 'index, follow');
+    // Public routes stay indexable; noindex pages (e.g. 404) are excluded so Google
+    // doesn't index soft-404 / junk URLs that the SPA returns 200 for.
+    setMeta('meta[name="robots"]', 'content', noindex ? 'noindex, follow' : 'index, follow');
 
     // <link rel="canonical">
     setMeta('link[rel="canonical"]', 'href', canonicalUrl);
@@ -76,5 +79,5 @@ export function useSEO({ title, description, path = '/', image }: SEOProps) {
     setMeta('meta[name="twitter:title"]', 'content', title);
     setMeta('meta[name="twitter:description"]', 'content', description);
     setMeta('meta[name="twitter:image"]', 'content', ogImage);
-  }, [title, description, path, image]);
+  }, [title, description, path, image, noindex]);
 }

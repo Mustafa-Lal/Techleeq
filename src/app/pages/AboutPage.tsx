@@ -4,6 +4,7 @@ import { Target, Users, Globe2, ArrowRight, Lightbulb, Shield, Zap, Instagram, F
 import { Button } from '../components/Button';
 import { extractTextFromRichText } from '../utils';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 
 const values = [
   { icon: Lightbulb, title: 'Creativity First', desc: "We don't just write lines of code. We obsess over the user experience, ensuring your software is beautifully designed, highly intuitive, and enjoyable for your team to use." },
@@ -20,12 +21,7 @@ const stats = [
 ];
 
 export function AboutPage() {
-  useSEO({
-    title: 'About Techleeq – Our Mission, Team & Story',
-    description:
-      "Learn about Techleeq's journey, our values, and the team behind Africa's leading business management software platform.",
-    path: '/about',
-  });
+  useSEO(ROUTE_SEO['/about']);
 
   const [team, setTeam] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

@@ -4,13 +4,9 @@ import { MapPin, Clock, Briefcase, ChevronDown, ChevronUp, ArrowRight, Users } f
 import { Button } from '../components/Button';
 import { RichTextRenderer } from '../components/RichTextRenderer';
 import { useSEO } from '../hooks/useSEO';
+import { ROUTE_SEO } from '../seo.config';
 export function CareersPage() {
-  useSEO({
-    title: 'Careers at Techleeq – Join Our Team Across Africa',
-    description:
-      'Join 80+ people across 12 countries building the future of African enterprise software. View open roles at Techleeq and make your impact.',
-    path: '/careers',
-  });
+  useSEO(ROUTE_SEO['/careers']);
 
   const [jobs, setJobs] = useState<any[]>([]);
   const [activeDept, setActiveDept] = useState('All');
